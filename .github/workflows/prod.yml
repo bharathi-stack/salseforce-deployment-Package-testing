@@ -32,24 +32,34 @@ jobs:
           sf org login sfdx-url --sfdx-url-file ./prod-auth.txt --alias prodOrg
 
       # 5. Create a new package version
-      # - Uses the manual 'package_name' input
-      # - Uses the PACKAGE_INSTALL_KEY secret
-      # - Waits for 15 minutes (you can adjust this)
-      # - Stores the new 04t... ID in an environment variable
       - name: Create New Package Version
         run: |
-          # This is now hardcoded to 'serverobjectpackage'
-          echo "Creating new version for package: serverobjectpackage"
+          echo "Attempting to create new version for package: serverobjectpackage"
           
-          # This command outputs JSON, which we then parse to find the SubscriberPackageVersionId (04t...)
-          JSON_OUTPUT=$(sf package version create --package "serverobjectpackage" --installation-key "${{ secrets.PACKAGE_INSTALL_KEY }}" --wait 15 --json)
+          # This line is the key change:
+          # 1. We run the command and redirect stderr to stdout (2>&1)
+          # 2. We store ALL output (success or error) in the OUTPUT variable
+          # 3. We use '|| true' to prevent the script from exiting if the command fails
+          OUTPUT=$(sf package version create --package "serverobjectpackage" --installation-key "${{ secrets.PACKAGE_INSTALL_KEY }}" --wait 15 --json 2>&1 || true)
+
+          # Now we print the full output, no matter what
+          echo "-----------------------------------------------------"
+          echo "Full output from sf package version create:"
+          echo "$OUTPUT"
+          echo "-----------------------------------------------------"
+
+          # Now we check if the output contains the word "Error" or "Deprecated"
+          if echo "$OUTPUT" | grep -q "Error\|Deprecated"; then
+            echo "::error::Failed to create package version. See full output above."
+            exit 1 # Manually fail the job
+          fi
           
-          echo $JSON_OUTPUT
-          
-          PACKAGE_VERSION_ID=$(echo $JSON_OUTPUT | jq -r .result.SubscriberPackageVersionId)
+          # If no error, we continue to parse the JSON
+          PACKAGE_VERSION_ID=$(echo $OUTPUT | jq -r .result.SubscriberPackageVersionId)
           
           if [ -z "$PACKAGE_VERSION_ID" ] || [ "$PACKAGE_VERSION_ID" == "null" ]; then
-            echo "Failed to create package version. Aborting."
+            echo "::error::Successfully ran command, but failed to parse Package Version ID from JSON."
+            echo "JSON was: $OUTPUT"
             exit 1
           fi
           
