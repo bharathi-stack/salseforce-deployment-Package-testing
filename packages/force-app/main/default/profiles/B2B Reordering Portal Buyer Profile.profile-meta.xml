@@ -10,6 +10,15 @@
     <layoutAssignments>
         <layout>cloud__c-cloud Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>server1__c-server1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>server2__c-server2 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>server3__c-server3 Layout</layout>
+    </layoutAssignments>
     <userLicense>External Apps Login</userLicense>
     <userPermissions>
         <enabled>true</enabled>
