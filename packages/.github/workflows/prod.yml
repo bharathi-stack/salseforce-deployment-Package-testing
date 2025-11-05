@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Get your code from the repository
+      # 1. Get your code from the repository 
       - name: Check out repository
         uses: actions/checkout@v4
 
