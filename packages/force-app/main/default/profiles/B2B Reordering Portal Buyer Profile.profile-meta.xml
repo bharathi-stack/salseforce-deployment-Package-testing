@@ -5,6 +5,9 @@
         <layout>cloud22__c-cloud22 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>cloud333__c-cloud333 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>cloud__c-cloud Layout</layout>
     </layoutAssignments>
     <userLicense>External Apps Login</userLicense>

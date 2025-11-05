@@ -5,6 +5,9 @@
         <layout>cloud22__c-cloud22 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>cloud333__c-cloud333 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>cloud__c-cloud Layout</layout>
     </layoutAssignments>
     <objectPermissions>
@@ -14,6 +17,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>cloud22__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>cloud333__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
