@@ -1,11 +1,19 @@
 {
   "packageDirectories": [
     {
-      "versionName": "ver 0.1",
+      "versionName": "ver 0.2",
       "versionNumber": "0.1.0.NEXT",
       "path": "force-app",
-      "default": true,
+      "default": false,
       "package": "objectpackage",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.2",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "server-app",
+      "default": true,
+      "package": "serverobjectpackage",
       "versionDescription": ""
     }
   ],
@@ -16,6 +24,10 @@
   "packageAliases": {
     "objectpackage": "0Hog500000003IrCAI",
     "objectpackage@0.1.0-1": "04tg50000000cN3AAI",
-    "objectpackage@0.1.0-2": "04tg50000000cOfAAI"
+    "objectpackage@0.1.0-2": "04tg50000000cOfAAI",
+    "objectpackage@0.1.2-1": "04tg50000000cRtAAI",
+    "serverobjectpackage": "0Hog500000003KTCAY",
+    "serverobjectpackage@0.1.0-1": "04tg50000000cTVAAY",
+    "serverobjectpackage@0.1.0-2": "04tg50000000cV7AAI"
   }
 }
