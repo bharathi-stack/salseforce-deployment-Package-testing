@@ -17,12 +17,12 @@ jobs:
       - name: Install Salesforce CLI
         uses: sfdx-actions/setup-sfdx@v1
  
-      # # 3. Authenticate to the Dev Hub (where packages are created)
-      # # Uses the SF_DEV_HUB_AUTH_URL secret you created
-      # - name: Authenticate to Dev Hub
-      #   run: |
-      #     echo "${{ secrets.SF_DEV_HUB_AUTH_URL }}" > ./devhub-auth.txt
-      #     sf org login sfdx-url --sfdx-url-file ./devhub-auth.txt --set-default-dev-hub
+      # 3. Authenticate to the Dev Hub (where packages are created)
+      # Uses the SF_DEV_HUB_AUTH_URL secret you created
+      - name: Authenticate to Dev Hub
+        run: |
+          echo "${{ secrets.SF_DEV_HUB_AUTH_URL }}" > ./devhub-auth.txt
+          sf org login sfdx-url --sfdx-url-file ./devhub-auth.txt --set-default-dev-hub --alias devHub
 
       # 4. Authenticate to the Production Org (where package is installed)
       # Uses the SF_PROD_AUTH_URL secret
