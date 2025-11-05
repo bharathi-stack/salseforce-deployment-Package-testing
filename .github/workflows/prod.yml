@@ -15,7 +15,7 @@ jobs:
 
       # 2. Install the Salesforce CLI
       - name: Install Salesforce CLI
-        uses: salesforce/setup-sf@v1
+        uses: salesforce/setup-sfdx@v1
  
       # # 3. Authenticate to the Dev Hub (where packages are created)
       # # Uses the SF_DEV_HUB_AUTH_URL secret you created
