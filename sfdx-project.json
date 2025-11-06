@@ -9,8 +9,8 @@
       "versionDescription": ""
     },
     {
-      "versionName": "ver 0.2",
-      "versionNumber": "0.1.0.NEXT",
+      "versionName": "ver 0.6",
+      "versionNumber": "0.1.6.NEXT",
       "path": "server-app",
       "default": true,
       "package": "serverobjectpackage",
