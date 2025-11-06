@@ -36,10 +36,9 @@ jobs:
         run: |
           echo "Attempting to create new version for package: serverobjectpackage"
           
-          # 1. Run the command and store the STDOUT (which is only JSON) in OUTPUT.
-          #    STDERR (warnings, logs) will print to the action log.
-          #    We use '|| true' to let the script continue so we can parse the JSON.
-          OUTPUT=$(sf package version create --package "serverobjectpackage" --installation-key "${{ secrets.PACKAGE_INSTALL_KEY }}" --wait 15 --json || true)
+          # We've added the --code-coverage flag here.
+          # This tells Salesforce to run all Apex tests and check for 75% coverage.
+          OUTPUT=$(sf package version create --package "serverobjectpackage" --installation-key "${{ secrets.PACKAGE_INSTALL_KEY }}" --wait 15 --json --code-coverage || true)
 
           echo "-----------------------------------------------------"
           echo "Full JSON output from sf package version create:"
