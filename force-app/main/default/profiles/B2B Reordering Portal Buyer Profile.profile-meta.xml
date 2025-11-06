@@ -26,6 +26,9 @@
         <layout>testingflow3__c-testingflow3 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>testingflow4__c-testingflow4 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>testingflow__c-testingflow Layout</layout>
     </layoutAssignments>
     <userLicense>External Apps Login</userLicense>
