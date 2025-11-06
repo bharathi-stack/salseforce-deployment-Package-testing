@@ -19,6 +19,9 @@
     <layoutAssignments>
         <layout>server3__c-server3 Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>testingflow__c-testingflow Layout</layout>
+    </layoutAssignments>
     <userLicense>External Apps Login</userLicense>
     <userPermissions>
         <enabled>true</enabled>
