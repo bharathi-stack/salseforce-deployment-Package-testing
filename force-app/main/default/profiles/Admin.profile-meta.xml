@@ -23,6 +23,9 @@
         <layout>testingflow2__c-testingflow2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>testingflow3__c-testingflow3 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>testingflow__c-testingflow Layout</layout>
     </layoutAssignments>
     <objectPermissions>
@@ -86,6 +89,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>testingflow2__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>testingflow3__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
