@@ -9,7 +9,7 @@
       "versionDescription": ""
     },
     {
-      "versionName": "ver 0.6",
+      "versionName": "ver 0.6.1",
       "versionNumber": "0.1.6.NEXT",
       "path": "server-app",
       "default": true,
